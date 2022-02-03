@@ -2,12 +2,11 @@
 import './Board.css';
 import { Cell } from '../Cell/Cell';
 
-export const Board = () => {
-    const cellValues = ['X', 'X', 'X', 'O', 'O', 'X', 'O', '', ''];
-    const winningCombination = [0, 1, 2];
+export const Board = (props) => {
 
-    const cells = cellValues.map((value, index) => {
-        const canHighlight = winningCombination && winningCombination.indexOf(index) >= 0;
+
+    const cells = props.cellValues.map((value, index) => {
+        const canHighlight = props.winningCombination && props.winningCombination.indexOf(index) >= 0;
 
         return <Cell
             key={index}
