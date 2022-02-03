@@ -12,7 +12,7 @@ export const Cell = (props) => {
     populated: props.value
 });
     return (
-        <button className={cellClasses}>
+        <button className={cellClasses} onClick={props.onClick} >
             <span className={cellContentClasses}>{props.value}</span>
         </button>
     );

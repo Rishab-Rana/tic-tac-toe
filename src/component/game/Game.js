@@ -3,8 +3,13 @@ import './Game.css';
 import {Board} from "../board/Board"
 
  export const Game = () =>  {
-    const cellValues = ['X', 'X', 'X', 'O', 'O', 'X', 'O', '', ''];
-    const winningCombination = [0, 1, 2];
+    const cellValues = ['', '', '', '', '', '', '', '', ''];
+    const winningCombination = [];
+
+    const onCellClicked = (cellIndex) => {
+    console.log(`Cell ${cellIndex} clicked.`);
+    };
+
 
   return (
     <>
@@ -12,7 +17,8 @@ import {Board} from "../board/Board"
     <h1>Tic Tac Toe</h1>
     < Board 
     cellValues={cellValues} 
-    winningCombination={winningCombination} />
+    winningCombination={winningCombination}
+    cellClicked ={onCellClicked} />
 </div>
 
 <div id="modal-overlay">
