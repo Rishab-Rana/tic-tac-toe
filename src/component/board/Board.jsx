@@ -3,19 +3,22 @@ import './Board.css';
 import { Cell } from '../Cell/Cell';
 
 export const Board = () => {
+    const cellValues = ['X', 'X', 'X', 'O', 'O', 'X', 'O', '', ''];
+    const winningCombination = [0, 1, 2];
+
+    const cells = cellValues.map((value, index) => {
+        const canHighlight = winningCombination && winningCombination.indexOf(index) >= 0;
+
+        return <Cell
+            key={index}
+            value={value}
+            canHighlight={canHighlight} />
+    });
+
     return (
-        
-            <div id="board">
-                <Cell value="X" canHighlight={true} />
-                <Cell value="X" canHighlight={true}/>
-                <Cell value="X" canHighlight={true} />
-                <Cell value="O" canHighlight={false} />
-                <Cell value="O" canHighlight={false} />
-                <Cell value="X" canHighlight={false} />
-                <Cell value="O" canHighlight={false} />
-                <Cell value="" canHighlight={false} />
-                <Cell value="" canHighlight={false} />    
-            </div>
+        <div id="board">
+            {cells} 
+        </div>
     );
 }
 

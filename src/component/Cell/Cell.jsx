@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import './Cell.css';
 
 export const Cell = (props) => {
- const cellClasses =classNames({
+ const cellClasses = classNames({
      cell: true,
      winner: props.canHighlight
  });
@@ -12,7 +12,6 @@ export const Cell = (props) => {
     populated: props.value
 });
     return (
-
         <button className={cellClasses}>
             <span className={cellContentClasses}>{props.value}</span>
         </button>
